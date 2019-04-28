@@ -1,0 +1,16 @@
+@import "variable";
+
+@mixin flex() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin button() {
+  display: inline-block;
+  min-width: 132px;
+  padding: 7px 24px 9px;
+  color: $color-white;
+  text-align: center;
+  border-radius: $radius-normal;
+  transition: background-color $transition-normal;
+}

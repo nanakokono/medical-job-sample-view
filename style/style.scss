@@ -29,20 +29,15 @@ p {
   line-height: 1.6;
 }
 
-@mixin button() {
-  min-width: 120px;
-  padding: 7px 24px 9px;
-  color: $color-white;
-  font-weight: bold;
-  text-align: center;
-  border-radius: $radius-normal;
-}
-
 .button-primary {
   @include button();
   color: $color-white;
-  background: $color-primary;
+  background-color: $color-primary;
   box-shadow: $button-shadow;
+
+  &:hover {
+    background-color: $color-hover-primary;
+  }
 }
 
 /**
@@ -57,8 +52,7 @@ header {
   background: $color-white;
 
   > div {
-    display: flex;
-    align-items: center;
+    @include flex();
     width: $max-width;
     padding: 20px $wrap-padding;
     margin: 0 auto;
@@ -83,9 +77,11 @@ main {
   INDEX
  */
 #index {
-  padding-top: 64px;
+  padding-top: 72px;
 
   .index-logo {
+    width: 828px;
+    margin: 0 auto;
     h1 {
       font-size: 40px;
 
@@ -97,13 +93,13 @@ main {
   }
 
   .index-search {
-    margin-top: 64px;
-    display: flex;
+    @include flex();
+    margin-top: 56px;
+    justify-content: center;
     align-items: flex-end;
 
     ul {
-      display: flex;
-      align-items: center;
+      @include flex();
 
       li {
         + li {
@@ -112,7 +108,7 @@ main {
       }
 
       label {
-        display: flex;
+        @include flex();
 
         i {
           margin-top: 3px;
@@ -128,13 +124,131 @@ main {
 
       input {
         margin-top: 8px;
-        width: 360px;
+        width: 320px;
       }
     }
 
     .button-primary {
       margin-left: 24px;
       width: 140px;
+    }
+  }
+}
+
+/**
+  SEARCH
+ */
+$search-condition-width: 260px;
+
+#search {
+  > div {
+   @include flex();
+    align-items: flex-start;
+  }
+
+  .search-condition {
+    width: $search-condition-width;
+
+    ul {
+      li {
+        & + li {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    .button-primary {
+      margin-top: 24px;
+    }
+
+    label {
+      @include flex();
+
+      i {
+        font-size: $icon-small;
+        color: $color-light-primary;
+      }
+
+      span {
+        margin-left: 4px;
+      }
+    }
+
+    input {
+      margin-top: 8px;
+      width: $search-condition-width;
+    }
+  }
+
+  .search-result {
+    margin-left: 32px;
+
+    h1 {
+      font-size: $fz-large;
+      font-weight: bold;
+    }
+  }
+
+  .search-result-jobs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: 8px;
+  }
+
+  .search-result-job {
+    width: ($max-width - $search-condition-width - $wrap-padding * 2 - 32px - 16px) / 2;
+    margin-top: 16px;
+    background: $color-white;
+    border: $border-normal;
+    border-radius: $radius-normal;
+
+    a {
+      display: block;
+      padding: 12px 16px 16px;
+    }
+
+    &:nth-child(even) {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 8px $color-light-gray;
+
+      h2 {
+        text-decoration: underline;
+      }
+    }
+
+    h2 {
+      color: $color-primary;
+    }
+  }
+
+  .search-result-job-description {
+    margin-top: 8px;
+
+    > li {
+      @include flex();
+      align-items: flex-start;
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+
+    i {
+      margin-top: 2px;
+      font-size: $icon-small;
+      color: $color-light-gray;
+    }
+
+    p {
+      max-height: 62px;
+      margin-left: 4px;
+      font-size: $fz-normal;
+      color: $color-dark-gray;
+      overflow: hidden;
     }
   }
 }

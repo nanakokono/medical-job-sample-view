@@ -3,10 +3,11 @@
  */
 $color-primary: #1578D4;
 $color-light-primary: #97C1E8;
+$color-hover-primary: #1889F2;
 $color-dark: #2E3033;
 $color-dark-gray: #676C73;
 $color-gray: #A1A7B3;
-$color-light-gray: #E1E2E6;
+$color-light-gray: #D4D5D9;
 $color-light: #FAFBFC;
 $color-white: white;
 $color-danger: #D41515;
@@ -16,7 +17,6 @@ $color-danger: #D41515;
  */
 $fz-x-small: 10px;
 $fz-small: 12px;
-// 不要なら消す
 $fz-normal: 14px;
 $fz-medium: 16px;
 $fz-large: 20px;
@@ -43,8 +43,8 @@ $max-width: 1080px;
 $wrap-padding: 40px;
 $header-height: 63px;
 $input-height: 40px;
-$icon-normal: 20px;
-$icon-big: 24px;
+$icon-small: 20px;
+$icon-normal: 24px;
 
 /**
   BREAK POINT
@@ -54,7 +54,7 @@ $sp-break: 800px;
 /**
   BOX SHADOW
  */
-$button-shadow: 0px 0px 12px $color-light-primary;
+$button-shadow: 0px 0px 8px $color-light-primary;
 
 /**
   TRANSITION
