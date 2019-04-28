@@ -1,0 +1,24 @@
+@import "import";
+// 一旦このファイルにいろいろ書きます
+
+/**
+  COMMON
+ */
+.logo {
+  font-family: Optima, sans-serif;
+  color: $color-primary;
+}
+
+input {
+  height: $input-height;
+  border: $border-normal;
+  border-radius: $radius-normal;
+  background: $color-white;
+}
+
+/**
+  HEADER
+ */
+header {
+
+}
