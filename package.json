@@ -1,0 +1,14 @@
+{
+  "name": "medical_job_sample_view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass --include-path scss style/style.scss ../style.css -w --output-style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

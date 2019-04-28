@@ -1,0 +1,61 @@
+/**
+  BASE COLOR
+ */
+$color-primary: #1578D4;
+$color-light-primary: #1578D4;
+$color-dark: #2E3033;
+$color-dark-gray: #676C73;
+$color-gray: #A1A7B3;
+$color-light-gray: #E1E2E6;
+$color-light: #FAFBFC;
+$color-white: white;
+$color-danger: #D41515;
+
+/**
+  SPACE SIZE
+ */
+$sz-base: 8px;
+$sz-small: $sz-base / 2;
+$sz-normal: $sz-base * 2;
+
+/**
+  FONT SIZE
+ */
+$fz-x-small: 10px;
+$fz-small: 12px;
+// 不要なら消す
+$fz-normal: 14px;
+$fz-medium: 16px;
+$fz-large: 20px;
+
+/**
+  FONT FAMIRY
+ */
+$base-font: 'Noto Sans JP', 'Noto Sans', 'Avenir Next', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+/**
+  BORDER
+ */
+$border-normal: 1px $color-light-gray solid;
+
+/**
+  BORDER RADIUS
+ */
+$radius-normal: 6px;
+
+/**
+  WIDTH / HEIGHT
+ */
+$max-width: 1080px;
+$input-height: 40px;
+$sp-break: 800px;
+
+/**
+  BOX SHADOW
+ */
+$button-shadow: 0px 0px 12px $color-light-primary;
+
+/**
+  TRANSITION
+ */
+$transition-normal: 0.25s ease-out;
