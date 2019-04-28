@@ -203,6 +203,7 @@ $search-condition-width: 260px;
     background: $color-white;
     border: $border-normal;
     border-radius: $radius-normal;
+    transition: box-shadow $transition-normal;
 
     a {
       display: block;
