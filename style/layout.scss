@@ -1,9 +1,9 @@
 @import "variable";
 
 body {
-  width      : 100% ;
-  height     : 100% ;
-  background : $color-light;
+  width: $max-width;
+  margin: 0 auto;
+  background: $color-light;
 }
 
 * {
@@ -12,6 +12,7 @@ body {
   font-family: $base-font;
   font-size: 16px;
   color: $color-dark;
+  box-sizing: border-box;
 }
 
 a {

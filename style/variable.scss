@@ -2,7 +2,7 @@
   BASE COLOR
  */
 $color-primary: #1578D4;
-$color-light-primary: #1578D4;
+$color-light-primary: #97C1E8;
 $color-dark: #2E3033;
 $color-dark-gray: #676C73;
 $color-gray: #A1A7B3;
@@ -36,22 +36,20 @@ $border-normal: 1px $color-light-gray solid;
  */
 $radius-normal: 6px;
 
-
-/**
-  SPACE SIZE
- */
-$sz-base: 8px;
-$sz-small: $sz-base / 2;
-$sz-normal: $sz-base * 2;
-
 /**
   WIDTH / HEIGHT
  */
 $max-width: 1080px;
+$wrap-padding: 40px;
+$header-height: 63px;
 $input-height: 40px;
-$sp-break: 800px;
 $icon-normal: 20px;
 $icon-big: 24px;
+
+/**
+  BREAK POINT
+ */
+$sp-break: 800px;
 
 /**
   BOX SHADOW

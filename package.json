@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "node-sass --include-path scss style/style.scss ../style.css -w --output-style compressed"
+    "watch": "node-sass --include-path scss style/style.scss style/style.css -w --output-style compressed"
   },
   "author": "",
   "license": "ISC",

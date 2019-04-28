@@ -7,6 +7,9 @@
 .logo {
   font-family: Optima, sans-serif;
   color: $color-primary;
+  font-weight: bold;
+  font-size: $fz-large;
+  letter-spacing: 0.05em;
 }
 
 input {
@@ -14,11 +17,124 @@ input {
   border: $border-normal;
   border-radius: $radius-normal;
   background: $color-white;
+  font-size: $fz-small;
+  padding: 0 12px;
+
+  &::placeholder {
+    color: $color-gray;
+  }
+}
+
+p {
+  line-height: 1.6;
+}
+
+@mixin button() {
+  min-width: 120px;
+  padding: 7px 24px 9px;
+  color: $color-white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: $radius-normal;
+}
+
+.button-primary {
+  @include button();
+  color: $color-white;
+  background: $color-primary;
+  box-shadow: $button-shadow;
 }
 
 /**
   HEADER
  */
 header {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom: $border-normal;
+  background: $color-white;
 
+  > div {
+    display: flex;
+    align-items: center;
+    width: $max-width;
+    padding: 20px $wrap-padding;
+    margin: 0 auto;
+
+    p {
+      margin-left: 32px;
+      font-size: $fz-small;
+      color: $color-dark-gray;
+    }
+  }
+}
+
+/**
+  MAIN
+ */
+main {
+  margin-top: 63px;
+  padding: $wrap-padding;
+}
+
+/**
+  INDEX
+ */
+#index {
+  padding-top: 64px;
+
+  .index-logo {
+    h1 {
+      font-size: 40px;
+
+      + p {
+        margin-top: 8px;
+        color: $color-dark-gray;
+      }
+    }
+  }
+
+  .index-search {
+    margin-top: 64px;
+    display: flex;
+    align-items: flex-end;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        + li {
+          margin-left: 24px;
+        }
+      }
+
+      label {
+        display: flex;
+
+        i {
+          margin-top: 3px;
+          color: $color-light-primary;
+        }
+
+        span {
+          margin-left: 4px;
+          font-size: $fz-large;
+          font-weight: bold;
+        }
+      }
+
+      input {
+        margin-top: 8px;
+        width: 360px;
+      }
+    }
+
+    .button-primary {
+      margin-left: 24px;
+      width: 140px;
+    }
+  }
 }

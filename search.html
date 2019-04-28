@@ -6,18 +6,55 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="google-site-verification" content="rC1Jfn4_IJ4YtJT-HCQbsJ5ltHT_0s2lN_q0V-KBvUg" />
 </head>
 <body>
   <header>
     <div>
-      <a href="" class="logo">MEDICAL JOB</a>
+      <a href="index.html" class="logo">MEDICAL JOB</a>
       <p>医師・看護師・薬剤師・コメディカルのお仕事探し</p>
     </div>
   </header>
   <main id="search">
-    検索結果のページだよ
+    <div>
+      <section>
+        <ul>
+          <li>
+            <label for="job-category"><i class="material-icons">work</i>職種</label>
+            <input type="text" placeholder=" 「薬剤師」「看護師」「医師」" id="job-category">
+          </li>
+          <li>
+            <label for="job-place"><i class="material-icons">location_on</i>勤務地</label>
+            <input type="text" placeholder="「東京都」「世田谷区」「横浜市」" id="job-place">
+          </li>
+        </ul>
+        <a href="search.html">求人検索</a>
+      </section>
+      <section>
+        <h1>「薬剤師」の検索結果</h1>
+        <ul>
+          <li>
+            <h2>薬剤師、看護師、臨床心理士、臨床検査技師 / ちょいちょい株式会社</h2>
+            <ul>
+              <li>
+                <i class="material-icons">location_on</i>
+                <p>中野区新井1-1-1-111</p>
+              </li>
+              <li>
+                <i class="material-icons">monetization_on</i>
+                <p>年俸 ¥ 3,000,000 〜 ¥ 4,000,000（正社員）</p>
+              </li>
+              <li>
+                <i class="material-icons">description</i>
+                <p>みんなに優しい職場です。一緒に最高のウェルマーケしてくれる肩を募集中！</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 </body>
 </html>

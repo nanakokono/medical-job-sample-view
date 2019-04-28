@@ -6,33 +6,38 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="google-site-verification" content="rC1Jfn4_IJ4YtJT-HCQbsJ5ltHT_0s2lN_q0V-KBvUg" />
 </head>
 <body>
   <header>
     <div>
-      <a href="" class="logo">MEDICAL JOB</a>
+      <a href="index.html" class="logo">MEDICAL JOB</a>
       <p>医師・看護師・薬剤師・コメディカルのお仕事探し</p>
     </div>
   </header>
   <main id="index">
-    <section>
+    <section class="index-logo">
       <h1 class="logo">MEDICAL JOB</h1>
       <p>医師・看護師・薬剤師・コメディカルのお仕事探し</p>
     </section>
-    <div>
+    <div class="index-search">
       <ul>
         <li>
-          <label for="job-category"><i class="material-icons">work</i>職種</label>
+          <label for="job-category"><i class="material-icons">work</i>
+            <span>職種</span>
+          </label>
           <input type="text" placeholder=" 「薬剤師」「看護師」「医師」" id="job-category">
         </li>
         <li>
-          <label for="job-place"><i class="material-icons">location_on</i>勤務地</label>
+          <label for="job-place"><i class="material-icons">location_on</i>
+            <span>勤務地</span>
+          </label>
           <input type="text" placeholder="「東京都」「世田谷区」「横浜市」" id="job-place">
         </li>
       </ul>
-      <a href="search.html">求人検索</a>
+      <a href="search.html" class="button-primary">求人検索</a>
     </div>
   </main>
 </body>
