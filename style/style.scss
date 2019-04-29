@@ -254,3 +254,29 @@ $search-condition-width: 260px;
     }
   }
 }
+
+/**
+  JOB DETAIL
+ */
+#job-detail {
+  position: absolute;
+  #job-detail-fixed-button {
+    position: fixed;
+    width: $max-width;
+    padding: $wrap-padding;
+    padding-right: 84px;
+    top: $header-height;
+    right: auto;
+    left: auto;
+    text-align: right;
+
+    a {
+      width: 240px;
+      line-height: 28px;
+    }
+  }
+
+  .job-detail-description {
+    width: 716px;
+  }
+}
