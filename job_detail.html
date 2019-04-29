@@ -19,7 +19,7 @@
   </header>
   <main id="job-detail">
     <div id="job-detail-fixed-button">
-      <a href="" class="button-primary">応募</a>
+      <a href="" class="button-primary-large">応募</a>
     </div>
     <section class="job-detail-description">
       <h1>薬剤師、看護師、臨床心理士、臨床検査技師</h1>
@@ -59,6 +59,41 @@
       </ul>
       <span>更新日：2019/04/26</span>
     </section>
+    <form action="">
+      <h2>応募フォーム</h2>
+      <ul>
+        <li>
+          <label for="name">氏名</label>
+          <input type="text" id="name" placeholder="医療 太郎">
+        </li>
+        <li>
+          <label for="mail">メール</label>
+          <input type="email" id="mail" placeholder="example@medicaljob.com">
+        </li>
+        <li>
+          <label for="tel">電話番号</label>
+          <input type="tel" id="tel" placeholder="000-1234-5678">
+        </li>
+        <li>
+          <label for="birth">生年月日</label>
+          <select name="birth" id="birth">生年月日を選択してください</select>
+        </li>
+        <li>
+          <label for="certification">資格</label>
+          <input type="checkbox" id="certification">
+        </li>
+        <li>
+          <label for="work-start">勤務開始可能</label>
+          <input type="radio" id="work-start">
+        </li>
+        <li>
+          <label for="motive">応募動機</label>
+          <select name="motive" id="motive">生年月日を選択してください</select>
+        </li>
+      </ul>
+      <p><a href="">利用規約<i class="material-icons">open_in_new</i></a>に同意して</p>
+      <a href="" class="button-primary-large">応募</a>
+    </form>
   </main>
 </body>
 </html>

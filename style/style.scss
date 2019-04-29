@@ -40,6 +40,11 @@ p {
   }
 }
 
+.button-primary-large {
+  @include button-large();
+  @extend .button-primary;
+}
+
 /**
   HEADER
  */
@@ -260,20 +265,15 @@ $search-condition-width: 260px;
  */
 #job-detail {
   position: absolute;
+
   #job-detail-fixed-button {
     position: fixed;
     width: $max-width;
-    padding: $wrap-padding;
-    padding-right: 84px;
+    padding: $wrap-padding 84px $wrap-padding $wrap-padding;
     top: $header-height;
     right: auto;
     left: auto;
     text-align: right;
-
-    a {
-      width: 240px;
-      line-height: 28px;
-    }
   }
 
   .job-detail-description {

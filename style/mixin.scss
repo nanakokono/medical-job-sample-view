@@ -14,3 +14,13 @@
   border-radius: $radius-normal;
   transition: background-color $transition-normal;
 }
+
+@mixin button-large() {
+  display: inline-block;
+  min-width: 240px;
+  padding: 9px 24px 11px;
+  color: $color-white;
+  text-align: center;
+  border-radius: $radius-normal;
+  transition: background-color $transition-normal;
+}
