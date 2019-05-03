@@ -210,7 +210,8 @@ p {
 
   @media only screen and (max-width: $sp-break) {
     width: 100%;
-    line-height: 24px;
+    font-size: $fz-normal;
+    line-height: 28px;
   }
 }
 
@@ -273,7 +274,12 @@ p {
         span {
           margin-left: 4px;
           font-size: $fz-large;
-          font-weight: bold;
+        }
+
+        @media only screen and (max-width: $sp-break) {
+          span {
+            font-size: $fz-normal;
+          }
         }
       }
 
