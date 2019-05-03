@@ -8,6 +8,7 @@ $(function(){
   const $jobDetailFixedButton = $('#job-detail-fixed-button');
 
   $(window).scroll(function () {
+
     if($isPC) {
       if($(window).scrollTop() >= $jobDetailFormTop) {
         disableButton();
