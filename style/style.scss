@@ -75,6 +75,7 @@ input[type=radio], input[type=checkbox] {
 
   @media only screen and (max-width: $sp-break) {
     width: 100%;
+    transition: none;
   }
 }
 
@@ -104,6 +105,12 @@ input[type=radio], input[type=checkbox] {
     transform: rotate(45deg);
     z-index: 2;
   }
+
+  @media only screen and (max-width: $sp-break) {
+    &::before {
+      transition: none;
+    }
+  }
 }
 
 .radio {
@@ -126,6 +133,12 @@ input[type=radio], input[type=checkbox] {
     opacity: 0;
     transition: $transition-normal;
     transform: translateY(-50%);
+  }
+
+  @media only screen and (max-width: $sp-break) {
+    &::before {
+      transition: none;
+    }
   }
 }
 
