@@ -238,6 +238,13 @@ p {
     font-size: $fz-normal;
     line-height: 32px;
   }
+
+  &.disabled {
+    background-color: $color-light-gray;
+    color: $color-gray;
+    box-shadow: none;
+    cursor: default;
+  }
 }
 
 .button-primary-large {
@@ -348,7 +355,6 @@ p {
 /**
   SEARCH
  */
-$search-condition-width: 260px;
 
 #search {
 
@@ -363,7 +369,7 @@ $search-condition-width: 260px;
 
   .search-condition {
     margin-top: 21px;
-    width: $search-condition-width;
+    width: $small-column;
 
     @media only screen and (max-width: $sp-break) {
       margin-top: 0;
@@ -398,7 +404,7 @@ $search-condition-width: 260px;
 
     input {
       margin-top: 8px;
-      width: $search-condition-width;
+      width: 100%;
 
       @media only screen and (max-width: $sp-break) {
         width: 100%;
@@ -432,7 +438,7 @@ $search-condition-width: 260px;
   }
 
   .search-result-job {
-    width: ($pc-width - $search-condition-width - $wrap-padding * 2 - 32px - 16px) / 2;
+    width: ($pc-width - $small-column - $wrap-padding * 2 - 32px - 16px) / 2;
     margin-top: 16px;
     background: $color-white;
     border: $border-normal;
@@ -457,7 +463,7 @@ $search-condition-width: 260px;
     }
 
     &:hover {
-      box-shadow: 0 0 8px $color-light-gray;
+      box-shadow: $modal-shadow;
 
       h2 {
         text-decoration: underline;
@@ -502,27 +508,72 @@ $search-condition-width: 260px;
   JOB DETAIL
  */
 #job-detail {
-  @include flex();
-  align-items: flex-start;
+  .job-detail-wrap {
+    @include flex();
+    align-items: flex-start;
 
-  @media only screen and (max-width: $sp-break) {
-    display: block;
+    @media only screen and (max-width: $sp-break) {
+      display: block;
+    }
   }
 
-// TODO(nanako.kono) あとでjsで使う
-  //#job-detail-fixed-button {
-  //  position: fixed;
-  //  width: $max-width;
-  //  padding: $wrap-padding 84px $wrap-padding $wrap-padding;
-  //  top: $header-height;
-  //  right: auto;
-  //  left: auto;
-  //  text-align: right;
-  //  z-index: 0;
-  //}
+  #job-detail-fixed {
+    position: fixed;
+    top: 0;
+    left: auto;
+    width: $pc-width - $wrap-padding * 2;
+    margin: 0 auto;
+    padding: 40px 0;
+    z-index: 1;
+    display: none;
 
-  .job-detail-description-box {
-    width: 716px;
+    > section {
+      width: $small-column;
+      margin-left: auto;
+      border-radius: $radius-normal;
+      background: $color-white;
+      border: $border-normal;
+      padding: 16px;
+
+      h3 {
+        font-size: $fz-normal;
+      }
+
+      .button-primary {
+        margin-top: 16px;
+        width: 100%;
+        min-width: auto;
+      }
+    }
+
+    .job-detail-fixed-description {
+      margin-top: 8px;
+
+      li {
+        @include flex();
+        align-items: flex-start;
+
+        i, p {
+          word-break: break-all;
+        }
+
+        i {
+          margin-top: 4px;
+          color: $color-gray;
+          font-size: $icon-x-small;
+        }
+
+        p {
+          font-size: $fz-small;
+          margin-left: 4px;
+          color: $color-dark-gray;
+        }
+      }
+    }
+  }
+
+  .job-detail-description-wrap {
+    flex: 1;
 
     @media only screen and (max-width: $sp-break) {
       width: 100%;
@@ -531,7 +582,7 @@ $search-condition-width: 260px;
 
   .job-detail-button {
     margin-left: 40px;
-    flex: 1;
+    width: $small-column;
 
     // TODO(nanako.kono) あとでスクロール時に消したりする
     @media only screen and (max-width: $sp-break) {
@@ -606,9 +657,12 @@ $search-condition-width: 260px;
     color: $color-gray;
   }
 
+  .job-detail-form-wrap {
+    padding-top: 40px;
+  }
+
   form {
     position: relative;
-    margin-top: 40px;
     padding-bottom: 32px;
     background: $color-white;
     border-radius: $radius-normal;
