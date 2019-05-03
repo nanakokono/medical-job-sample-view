@@ -584,13 +584,13 @@ p {
     margin-left: 40px;
     width: $small-column;
 
-    // TODO(nanako.kono) あとでスクロール時に消したりする
     @media only screen and (max-width: $sp-break) {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
       margin-left: 0;
+      width: 100%;
       background: rgba(255,255,255, 0.8);
       box-shadow: $modal-shadow;
       padding: 16px 16px 24px;
