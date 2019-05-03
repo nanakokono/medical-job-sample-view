@@ -2,40 +2,50 @@ $(function(){
   const FORM_PADDING = 40;
   const SP_BREAK_POINT = 800;
   const $isPC = $(window).width() > SP_BREAK_POINT;
+  const $headerHeight = $('header').height();
+  const $jobDetailButton = $('#job-detail-button');
+  const $jobDetailFormTop = $('#job-detail-form').offset().top - FORM_PADDING - $headerHeight;
+  const $jobDetailFixedButton = $('#job-detail-fixed-button');
 
   $(window).scroll(function () {
-    const $jobDetailDescriptionTop = $('#job-detail-description').offset().top;
-    const $jobDetailFormTop = $('#job-detail-form').offset().top - FORM_PADDING;
-    const $jobDetailFixed = $('#job-detail-fixed');
-    const $jobDetailFixedButton = $('#job-detail-fixed-button');
-
     if($isPC) {
-      if($(window).scrollTop() > $jobDetailDescriptionTop) {
-        $jobDetailFixed.fadeIn();
-      }
-
-      if($(window).scrollTop() < $jobDetailDescriptionTop) {
-        $jobDetailFixed.fadeOut();
-      }
-
       if($(window).scrollTop() >= $jobDetailFormTop) {
-        $jobDetailFixedButton.addClass('disabled');
-        $jobDetailFixedButton.attr('href', 'javascript: void(0)')
+        disableButton();
       }
 
-      if($(window).scrollTop() < $jobDetailFormTop) {
-        $jobDetailFixedButton.removeClass('disabled');
-        $jobDetailFixedButton.attr('href', '#job-detail-form')
+      if($(window).scrollTop() < $jobDetailFormTop ) {
+        activateButton();
       }
     } else {
-      const $jobDetailFixedButtonSp = $('#job-detail-fixed-button-sp');
-      if($(window).scrollTop() >= $jobDetailFormTop) {
-        $jobDetailFixedButtonSp.fadeOut();
+      if($(window).scrollTop() >= $jobDetailFormTop ) {
+        $jobDetailButton.fadeOut();
       }
 
-      if($(window).scrollTop() < $jobDetailFormTop) {
-        $jobDetailFixedButtonSp.fadeIn();
+      if($(window).scrollTop() < $jobDetailFormTop ) {
+        $jobDetailButton.fadeIn();
       }
     }
-  })
+  });
+
+  $jobDetailButton.click(function () {
+    scrollToForm();
+  });
+
+  $jobDetailFixedButton.click(function () {
+    scrollToForm();
+  });
+
+  function scrollToForm() {
+    $("html,body").animate({scrollTop: $jobDetailFormTop});
+  }
+
+  function disableButton() {
+    $jobDetailFixedButton.addClass('disabled');
+    $jobDetailFixedButton.attr('href', 'javascript: void(0)')
+  }
+
+  function activateButton() {
+    $jobDetailFixedButton.removeClass('disabled');
+    $jobDetailFixedButton.attr('href', '#job-detail-form')
+  }
 });

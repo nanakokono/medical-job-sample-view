@@ -413,6 +413,7 @@ p {
   }
 
   .search-result {
+    flex: 1;
     margin-left: 32px;
 
     @media only screen and (max-width: $sp-break) {
@@ -519,13 +520,12 @@ p {
 
   #job-detail-fixed {
     position: fixed;
-    top: 0;
+    top: $header-height;
     left: auto;
     width: $pc-width - $wrap-padding * 2;
     margin: 0 auto;
     padding: 40px 0;
     z-index: 1;
-    display: none;
 
     > section {
       width: $small-column;
@@ -657,11 +657,8 @@ p {
     color: $color-gray;
   }
 
-  .job-detail-form-wrap {
-    padding-top: 40px;
-  }
-
   form {
+    margin-top: 40px;
     position: relative;
     padding-bottom: 32px;
     background: $color-white;

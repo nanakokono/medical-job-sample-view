@@ -39,11 +39,12 @@ body {
 header {
   width: 100vw;
   min-width: $pc-width;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   border-bottom: $border-normal;
   background: $color-white;
+  z-index: 1000;
 
   > div {
     @include flex();
