@@ -452,6 +452,7 @@ $search-condition-width: 260px;
       margin-top: 24px;
       background: $color-white;
       border-radius: $radius-normal;
+      border: $border-normal;
 
       > li {
         @include flex();
