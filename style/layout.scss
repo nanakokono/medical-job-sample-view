@@ -73,9 +73,9 @@ header {
  */
 main {
   margin-top: 63px;
-  padding: $wrap-padding;
+  padding: $wrap-padding $wrap-padding 80px;
 
   @media only screen and (max-width: $sp-break) {
-    padding: 16px;
+    padding: 16px 16px 80px;
   }
 }

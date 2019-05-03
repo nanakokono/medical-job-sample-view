@@ -353,6 +353,7 @@ $search-condition-width: 260px;
     width: $search-condition-width;
 
     @media only screen and (max-width: $sp-break) {
+      margin-top: 0;
       width: 100%;
     }
 
@@ -452,10 +453,7 @@ $search-condition-width: 260px;
 
     h2 {
       color: $color-primary;
-
-      @media only screen and (max-width: $sp-break) {
-        font-size: $fz-normal;
-      }
+      font-size: $fz-normal;
     }
   }
 
@@ -493,7 +491,6 @@ $search-condition-width: 260px;
 #job-detail {
   @include flex();
   align-items: flex-start;
-  padding-bottom: 100px;
 
   @media only screen and (max-width: $sp-break) {
     display: block;
