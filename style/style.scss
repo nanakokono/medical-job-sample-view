@@ -12,6 +12,20 @@
   letter-spacing: 0.05em;
 }
 
+.sp-on {
+  display: none! important;
+}
+
+@media(max-width: $sp-break) {
+  .sp-off {
+    display: none! important;
+  }
+
+  .sp-on {
+    display: block! important;
+  }
+}
+
 input {
   height: $input-height;
   border: $border-normal;
@@ -193,44 +207,16 @@ p {
   &:hover {
     background-color: $color-hover-primary;
   }
+
+  @media only screen and (max-width: $sp-break) {
+    width: 100%;
+    line-height: 24px;
+  }
 }
 
 .button-primary-large {
   @include button-large();
   @extend .button-primary;
-}
-
-/**
-  HEADER
- */
-header {
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-bottom: $border-normal;
-  background: $color-white;
-
-  > div {
-    @include flex();
-    width: $max-width;
-    padding: 20px $wrap-padding;
-    margin: 0 auto;
-
-    p {
-      margin-left: 32px;
-      font-size: $fz-x-small;
-      color: $color-dark-gray;
-    }
-  }
-}
-
-/**
-  MAIN
- */
-main {
-  margin-top: 63px;
-  padding: $wrap-padding;
 }
 
 /**
@@ -242,12 +228,21 @@ main {
   .index-logo {
     width: 828px;
     margin: 0 auto;
+
     h1 {
       font-size: 40px;
 
       + p {
         margin-top: 8px;
         color: $color-dark-gray;
+      }
+    }
+
+    @media only screen and (max-width: $sp-break) {
+      width: 100%;
+
+      h1 {
+        font-size: 32px;
       }
     }
   }
@@ -290,7 +285,31 @@ main {
 
     .button-primary {
       margin-left: 24px;
-      width: 140px;
+
+      @media only screen and (max-width: $sp-break) {
+        margin-top: 24px;
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (max-width: $sp-break) {
+      display: block;
+      margin-top: 40px;
+
+      ul {
+        display: block;
+
+        li {
+          + li {
+            margin-top: 16px;
+            margin-left: 0;
+          }
+        }
+
+        input {
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -358,7 +377,7 @@ $search-condition-width: 260px;
   }
 
   .search-result-job {
-    width: ($max-width - $search-condition-width - $wrap-padding * 2 - 32px - 16px) / 2;
+    width: ($pc-width - $search-condition-width - $wrap-padding * 2 - 32px - 16px) / 2;
     margin-top: 16px;
     background: $color-white;
     border: $border-normal;
