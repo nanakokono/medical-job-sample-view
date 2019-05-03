@@ -17,11 +17,162 @@ input {
   border: $border-normal;
   border-radius: $radius-normal;
   background: $color-white;
-  font-size: $fz-small;
+  font-size: $fz-x-small;
   padding: 0 12px;
 
   &::placeholder {
     color: $color-gray;
+  }
+}
+
+// CHECKBOX / RADIO BUTTON
+input[type=radio], input[type=checkbox] {
+  display: none;
+  width: auto;
+}
+
+.radio, .checkbox {
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 12px;
+  padding-left: $checkbox-radio-width + 8px;
+  cursor: pointer;
+
+  &:hover {
+    &:after {
+      border-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    transform: translateY(-50%);
+    width: $checkbox-radio-width;
+    height: $checkbox-radio-width;
+    border: $border-normal;
+    transition: $transition-normal;
+  }
+}
+
+.checkbox {
+  display: inline-block;
+  margin-right: 24px;
+
+  &::after {
+    border-radius: $radius-normal;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    display: block;
+    margin-top: -7px;
+    width: 4px;
+    height: 8px;
+    border-right: 2px solid $color-white;
+    border-bottom: 2px solid $color-white;
+    opacity: 0;
+    transition: $transition-normal;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 2;
+  }
+}
+
+.radio {
+  display: block;
+
+  &::after {
+    border-radius: 50%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    display: block;
+    width: $checkbox-radio-width / 2;
+    height: $checkbox-radio-width / 2;
+    border-radius: 50%;
+    background-color: $color-primary;
+    opacity: 0;
+    transition: $transition-normal;
+    transform: translateY(-50%);
+  }
+}
+
+input[type=checkbox]:checked + label::before,
+input[type=radio]:checked + label::before{
+  opacity: 1;
+}
+
+input[type=checkbox]:checked + label::after {
+  background: $color-primary;
+  border: none;
+}
+
+// SELECTBOX
+select {
+  position: relative;
+  padding: 0 12px;
+  width: $input-width-wide;
+  height: $input-height;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  border: $border-normal;
+  border-radius: $radius-normal;
+  font-size: $fz-small;
+  line-height: $fz-small;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: $color-dark;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.8em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #da3c41;
+    pointer-events: none;
+
+  }
+}
+
+.select-wrap {
+  position: relative;
+  width: $input-width-wide;
+
+  label {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+
+    i {
+      color: $color-gray;
+    }
   }
 }
 
@@ -64,7 +215,7 @@ header {
 
     p {
       margin-left: 32px;
-      font-size: $fz-small;
+      font-size: $fz-x-small;
       color: $color-dark-gray;
     }
   }
@@ -129,7 +280,7 @@ main {
 
       input {
         margin-top: 8px;
-        width: 320px;
+        width: $input-width-wide;
       }
     }
 
@@ -253,7 +404,7 @@ $search-condition-width: 260px;
     p {
       max-height: 62px;
       margin-left: 4px;
-      font-size: $fz-normal;
+      font-size: $fz-x-small;
       color: $color-dark-gray;
       overflow: hidden;
     }
@@ -274,9 +425,136 @@ $search-condition-width: 260px;
     right: auto;
     left: auto;
     text-align: right;
+    z-index: 0;
   }
 
+  $job-detail-description-width: 716px;
+
   .job-detail-description {
-    width: 716px;
+    width: $job-detail-description-width;
+    z-index: 2;
+
+    h1 {
+      font-size: $fz-large;
+    }
+
+    ul {
+      margin-top: 24px;
+      background: $color-white;
+      border-radius: $radius-normal;
+
+      > li {
+        @include flex();
+        align-items: flex-start;
+        padding: 16px;
+
+        + li {
+          border-top: $border-normal;
+        }
+
+        > div {
+          @include flex();
+          width: $table-title-width;
+
+          i {
+            font-size: $icon-small;
+            color: $color-gray;
+          }
+
+          span {
+            margin-left: 8px;
+            color: $color-dark-gray;
+          }
+        }
+
+        > p {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .job-detail-updated {
+    margin-top: 8px;
+    font-size: $fz-x-small;
+    color: $color-gray;
+  }
+
+  form {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 32px;
+    width: $job-detail-description-width;
+    background: $color-white;
+    border-radius: $radius-normal;
+    border: $border-light-primary;
+    z-index: 2;
+
+    h2 {
+      padding: 16px 24px;
+      font-size: $fz-large;
+    }
+
+    > dl {
+      padding: 16px;
+      border-top: $border-light-primary;
+
+      dt, dd {
+        display: inline-block;
+        margin-top: 16px;
+        vertical-align: top;
+      }
+
+      dt,
+      dt > label {
+        width: $table-title-width;
+        padding-top: 4px;
+        text-align: right;
+        color: $color-dark-gray;
+      }
+
+      dd {
+        width: calc(100% - #{$table-title-width} - 48px);
+        margin-left: 16px;
+
+        input {
+          width: $input-width-wide;
+          padding: 8px 12px 10px;
+          font-size: $fz-small;
+        }
+      }
+
+      .job-detail-form-license,
+      .job-detail-form-starting {
+        margin-top: 22px;
+      }
+
+      .job-detail-form-purpose,
+      .job-detail-form-purpose > select{
+        width: $select-width-wide;
+      }
+    }
+
+    .job-detail-form-button-box {
+      text-align: center;
+
+      .job-detail-form-terms-of-service {
+        font-size: $fz-small;
+
+        a,
+        i {
+          color: $color-primary;
+          font-size: $fz-small;
+        }
+
+        i {
+          margin-top: 4px;
+        }
+      }
+
+      .button-primary-large {
+        margin-top: 8px;
+      }
+    }
   }
 }

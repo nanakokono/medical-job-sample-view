@@ -8,17 +8,16 @@ $color-dark: #2E3033;
 $color-dark-gray: #676C73;
 $color-gray: #A1A7B3;
 $color-light-gray: #D4D5D9;
-$color-light: #FAFBFC;
+$color-light: #f5f5f7;
 $color-white: white;
 $color-danger: #D41515;
 
 /**
   FONT SIZE
  */
-$fz-x-small: 10px;
-$fz-small: 12px;
-$fz-normal: 14px;
-$fz-medium: 16px;
+$fz-x-small: 12px;
+$fz-small: 14px;
+$fz-normal: 16px;
 $fz-large: 20px;
 
 /**
@@ -30,6 +29,7 @@ $base-font: 'Noto Sans JP', 'Noto Sans', 'Avenir Next', 'Yu Gothic', 'Hiragino K
   BORDER
  */
 $border-normal: 1px $color-light-gray solid;
+$border-light-primary: 2px $color-light-primary solid;
 
 /**
   BORDER RADIUS
@@ -42,9 +42,16 @@ $radius-normal: 6px;
 $max-width: 1080px;
 $wrap-padding: 40px;
 $header-height: 63px;
-$input-height: 40px;
-$icon-small: 20px;
+$table-title-width: 128px;
 $icon-normal: 24px;
+$icon-small: 20px;
+$icon-x-small: $fz-x-small;
+
+// FORM
+$input-height: 40px;
+$input-width-wide: 320px;
+$select-width-wide: 420px;
+$checkbox-radio-width: 24px;
 
 /**
   BREAK POINT
