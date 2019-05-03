@@ -159,13 +159,13 @@ input[type=radio]:checked + label::after {
 // SELECTBOX
 select {
   position: relative;
-  padding: 0 32px 0 12px;
+  padding: 0 36px 0 12px;
   width: $input-width-wide;
   height: $input-height;
   cursor: pointer;
   text-overflow: ellipsis;
   overflow: hidden;
-  word-break: break-all;
+  white-space: nowrap;
   border: none;
   outline: none;
   background: transparent;
