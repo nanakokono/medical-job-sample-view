@@ -70,6 +70,10 @@ input[type=radio], input[type=checkbox] {
     border: $border-normal;
     transition: $transition-normal;
   }
+
+  @media only screen and (max-width: $sp-break) {
+    width: 100%;
+  }
 }
 
 .checkbox {
@@ -174,7 +178,9 @@ select {
     border-right: 6px solid transparent;
     border-top: 6px solid #da3c41;
     pointer-events: none;
-
+  }
+  @media only screen and (max-width: $sp-break) {
+    width: 100%;
   }
 }
 
@@ -191,6 +197,10 @@ select {
     i {
       color: $color-gray;
     }
+  }
+
+  @media only screen and (max-width: $sp-break) {
+    width: 100%;
   }
 }
 
@@ -481,6 +491,11 @@ $search-condition-width: 260px;
 #job-detail {
   @include flex();
   align-items: flex-start;
+  padding-bottom: 100px;
+
+  @media only screen and (max-width: $sp-break) {
+    display: block;
+  }
 
 // TODO(nanako.kono) あとでjsで使う
   //#job-detail-fixed-button {
@@ -496,11 +511,29 @@ $search-condition-width: 260px;
 
   .job-detail-description-box {
     width: 716px;
+
+    @media only screen and (max-width: $sp-break) {
+      width: 100%;
+    }
   }
 
   .job-detail-button {
     margin-left: 40px;
     flex: 1;
+
+    // TODO(nanako.kono) あとでスクロール時に消したりする
+    @media only screen and (max-width: $sp-break) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: 0;
+      background: rgba(255,255,255, 0.8);
+      box-shadow: $modal-shadow;
+      padding: 8px 16px;
+      text-align: center;
+      z-index: 2;
+    }
   }
 
   .job-detail-description {
@@ -518,6 +551,12 @@ $search-condition-width: 260px;
         @include flex();
         align-items: flex-start;
         padding: 16px;
+        word-break: break-all;
+
+        @media only screen and (max-width: $sp-break) {
+          display: block;
+          padding: 12px;
+        }
 
         + li {
           border-top: $border-normal;
@@ -540,6 +579,10 @@ $search-condition-width: 260px;
 
         > p {
           flex: 1;
+
+          @media only screen and (max-width: $sp-break) {
+            margin-top: 8px;
+          }
         }
       }
     }
@@ -560,19 +603,36 @@ $search-condition-width: 260px;
     border: $border-light-primary;
     z-index: 2;
 
+    @media only screen and (max-width: $sp-break) {
+      padding-bottom: 0;
+    }
+
     h2 {
       padding: 16px 24px;
       font-size: $fz-large;
+
+      @media only screen and (max-width: $sp-break) {
+        padding: 16px;
+        font-size: $fz-normal;
+      }
     }
 
     > dl {
       padding: 16px;
       border-top: $border-light-primary;
 
+      @media only screen and (max-width: $sp-break) {
+        padding: 0 16px 16px;
+      }
+
       dt, dd {
         display: inline-block;
         margin-top: 16px;
         vertical-align: top;
+
+        @media only screen and (max-width: $sp-break) {
+          display: block;
+        }
       }
 
       dt,
@@ -581,6 +641,11 @@ $search-condition-width: 260px;
         padding-top: 4px;
         text-align: right;
         color: $color-dark-gray;
+
+        @media only screen and (max-width: $sp-break) {
+          width: 100%;
+          text-align: left;
+        }
       }
 
       dd {
@@ -592,21 +657,45 @@ $search-condition-width: 260px;
           padding: 8px 12px 10px;
           font-size: $fz-small;
         }
+
+        @media only screen and (max-width: $sp-break) {
+          width: 100%;
+          margin-top: 8px;
+          margin-left: 0;
+
+          input {
+            width: 100%;
+          }
+        }
       }
 
       .job-detail-form-license,
       .job-detail-form-starting {
         margin-top: 22px;
+
+        @media only screen and (max-width: $sp-break) {
+          + dd {
+            margin-top: 0;
+          }
+        }
       }
 
       .job-detail-form-purpose,
       .job-detail-form-purpose > select{
         width: $select-width-wide;
+
+        @media only screen and (max-width: $sp-break) {
+          width: 100%;
+        }
       }
     }
 
     .job-detail-form-button-box {
       text-align: center;
+
+      @media only screen and (max-width: $sp-break) {
+        padding: 8px 16px 16px;
+      }
 
       .job-detail-form-terms-of-service {
         font-size: $fz-small;
