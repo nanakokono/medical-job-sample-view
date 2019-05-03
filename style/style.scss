@@ -119,6 +119,10 @@ input[type=checkbox]:checked + label::after {
   border: none;
 }
 
+input[type=radio]:checked + label::after {
+  border-color: $color-primary;
+}
+
 // SELECTBOX
 select {
   position: relative;
@@ -402,7 +406,7 @@ $search-condition-width: 260px;
     }
 
     p {
-      max-height: 62px;
+      max-height: 56px;
       margin-left: 4px;
       font-size: $fz-x-small;
       color: $color-dark-gray;
@@ -415,25 +419,31 @@ $search-condition-width: 260px;
   JOB DETAIL
  */
 #job-detail {
-  position: absolute;
+  @include flex();
+  align-items: flex-start;
 
-  #job-detail-fixed-button {
-    position: fixed;
-    width: $max-width;
-    padding: $wrap-padding 84px $wrap-padding $wrap-padding;
-    top: $header-height;
-    right: auto;
-    left: auto;
-    text-align: right;
-    z-index: 0;
+// TODO(nanako.kono) あとでjsで使う
+  //#job-detail-fixed-button {
+  //  position: fixed;
+  //  width: $max-width;
+  //  padding: $wrap-padding 84px $wrap-padding $wrap-padding;
+  //  top: $header-height;
+  //  right: auto;
+  //  left: auto;
+  //  text-align: right;
+  //  z-index: 0;
+  //}
+
+  .job-detail-description-box {
+    width: 716px;
   }
 
-  $job-detail-description-width: 716px;
+  .job-detail-button {
+    margin-left: 40px;
+    flex: 1;
+  }
 
   .job-detail-description {
-    width: $job-detail-description-width;
-    z-index: 2;
-
     h1 {
       font-size: $fz-large;
     }
@@ -484,7 +494,6 @@ $search-condition-width: 260px;
     position: relative;
     margin-top: 40px;
     padding-bottom: 32px;
-    width: $job-detail-description-width;
     background: $color-white;
     border-radius: $radius-normal;
     border: $border-light-primary;
@@ -540,6 +549,7 @@ $search-condition-width: 260px;
 
       .job-detail-form-terms-of-service {
         font-size: $fz-small;
+        color: $color-dark-gray;
 
         a,
         i {

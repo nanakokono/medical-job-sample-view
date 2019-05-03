@@ -3,6 +3,7 @@
 <head>
   <title>メディカルジョブ</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=5, minimum-scale=1">
+  <link rel="icon" href="/assets/img/favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700" rel="stylesheet">
@@ -18,138 +19,149 @@
     </div>
   </header>
   <main id="job-detail">
-    <div id="job-detail-fixed-button">
+    <!--TODO(nanako.kono) あとでjsで使う-->
+    <!--<div id="job-detail-fixed-button">-->
+      <!--<a href="" class="button-primary-large">応募</a>-->
+    <!--</div>-->
+    <div class="job-detail-description-box">
+      <section class="job-detail-description">
+        <h1>薬剤師、看護師、臨床心理士、臨床検査技師</h1>
+        <ul>
+          <li>
+            <div>
+              <i class="material-icons">local_hospital</i>
+              <span>病院 / 会社</span>
+            </div>
+            <p>ちょいちょい株式会社</p>
+          </li>
+          <li>
+            <div>
+              <i class="material-icons">location_on</i>
+              <span>勤務地</span>
+            </div>
+            <p>中野区新井1-1-1-1111-1-1-1111-1-1-1111-1-1-1111-1-1-111</p>
+          </li>
+          <li>
+            <div>
+              <i class="material-icons">monetization_on</i>
+              <span>給与</span>
+            </div>
+            <p>年俸 ¥ 3,000,000 〜 ¥ 4,000,000</p>
+          </li>
+          <li>
+            <div>
+              <i class="material-icons">monetization_on</i>
+              <span>雇用形態</span>
+            </div>
+            <p>正社員</p>
+          </li>
+          <li>
+            <div>
+              <i class="material-icons">description</i>
+              <span>求人詳細</span>
+            </div>
+            <p>
+              みんなに優しい職場です。一緒に最高のウェルマーケしてくれる肩を募集中！一緒に最高のウェルマーケしてくれるかたを募集中！一緒に最高のウェルマーケしてくれる肩を募集中！一緒に最高のウェルマーケしてくれる肩を募集中！
+            </p>
+          </li>
+        </ul>
+        <span class="job-detail-updated">更新日：2019/04/26</span>
+      </section>
+
+      <form action="">
+        <h2>応募フォーム</h2>
+        <dl>
+          <dt><label for="name">氏名</label></dt>
+          <dd><input type="text" id="name" placeholder="医療 太郎"></dd>
+          <dt><label for="mail">メール</label></dt>
+          <dd><input type="email" id="mail" placeholder="example@medicaljob.com"></dd>
+          <dt><label for="tel">電話番号</label></dt>
+          <dd><input type="tel" id="tel" placeholder="000-1234-5678"></dd>
+          <dt><label for="birth">生年月日</label></dt>
+          <dd>
+            <!--TODO(nanako.kono) 矢印選択時に選択肢がでないので、変えないといけない-->
+            <div class="select-wrap">
+              <select name="birth" id="birth">
+                <optgroup label="生年月日を選択してください">
+                  <option value="" hidden disabled selected>生年月日を選択してください</option>
+                  <option value="">1994/03/09</option>
+                </optgroup>
+              </select>
+              <label for="birth">
+                <i class="material-icons">arrow_drop_down</i>
+              </label>
+            </div>
+          </dd>
+          <dt class="job-detail-form-license">資格</dt>
+          <dd>
+            <input type="checkbox" id="license_01" name="license[]" value="医師">
+            <label for="license_01" class="checkbox">医師</label>
+
+            <input type="checkbox" id="license_02" name="license[]" value="看護師">
+            <label for="license_02" class="checkbox">看護師</label>
+
+            <input type="checkbox" id="license_03" name="license[]" value="准看護師">
+            <label for="license_03" class="checkbox">准看護師</label>
+
+            <input type="checkbox" id="license_04" name="license[]" value="薬剤師">
+            <label for="license_04" class="checkbox">薬剤師</label>
+
+            <input type="checkbox" id="license_05" name="license[]" value="普通自動車免許">
+            <label for="license_05" class="checkbox">普通自動車免許</label>
+
+            <input type="checkbox" id="license_06" name="license[]" value="その他">
+            <label for="license_06" class="checkbox">その他</label>
+          </dd>
+          <dt class="job-detail-form-starting">勤務開始可能</dt>
+          <dd>
+            <input type="radio" name="starting" value="within_one_month" id="starting_01" checked>
+            <label for="starting_01" class="radio">一ヶ月以内</label>
+
+            <input type="radio" name="starting" value="within_three_months" id="starting_02">
+            <label for="starting_02" class="radio">三ヶ月以内</label>
+
+            <input type="radio" name="starting" value="within_six_months" id="starting_03">
+            <label for="starting_03" class="radio">六ヶ月以内</label>
+
+            <input type="radio" name="starting" value="anytime" id="starting_04">
+            <label for="starting_04" class="radio">条件が良ければいつでも</label>
+
+            <input type="radio" name="starting" value="undecided" id="starting_05">
+            <label for="starting_05" class="radio">未定</label>
+          </dd>
+          <dt><label for="purpose">応募動機</label></dt>
+          <dd>
+            <div class="select-wrap job-detail-form-purpose">
+              <select name="purpose" id="purpose">
+                <optgroup label="応募動機を選択してください">
+                  <option value="" hidden disabled selected>応募動機を選択してください</option>
+                  <option value="detail">求人の詳細が知りたい</option>
+                  <option value="own_condition">求人に興味があり、自分の状況に沿った条件を知りたい</option>
+                  <option value="annalogy">求人に興味があり、似た条件の求人を知りたい</option>
+                  <option value="nagotiation">求人に興味があり、条件の変更ができるか交渉してほしい</option>
+                  <option value="etc">求人に関するその他問い合わせ</option>
+                </optgroup>
+              </select>
+              <label for="birth">
+                <i class="material-icons">arrow_drop_down</i>
+              </label>
+            </div>
+          </dd>
+        </dl>
+        <div class="job-detail-form-button-box">
+          <p class="job-detail-form-terms-of-service">
+            <a href="https://medicaljob.jp/s/term" target="_blank">
+              利用規約<i class="material-icons">open_in_new</i>
+            </a>
+            に同意して
+          </p>
+          <a href="" class="button-primary-large">応募</a>
+        </div>
+      </form>
+    </div>
+    <div class="job-detail-button">
       <a href="" class="button-primary-large">応募</a>
     </div>
-    <section class="job-detail-description">
-      <h1>薬剤師、看護師、臨床心理士、臨床検査技師</h1>
-      <ul>
-        <li>
-          <div>
-            <i class="material-icons">local_hospital</i>
-            <span>病院 / 会社</span>
-          </div>
-          <p>ちょいちょい株式会社</p>
-        </li>
-        <li>
-          <div>
-            <i class="material-icons">location_on</i>
-            <span>勤務地</span>
-          </div>
-          <p>中野区新井1-1-1-1111-1-1-1111-1-1-1111-1-1-1111-1-1-111</p>
-        </li>
-        <li>
-          <div>
-            <i class="material-icons">monetization_on</i>
-            <span>給与</span>
-          </div>
-          <p>年俸 ¥ 3,000,000 〜 ¥ 4,000,000</p>
-        </li>
-        <li>
-          <div>
-            <i class="material-icons">monetization_on</i>
-            <span>雇用形態</span>
-          </div>
-          <p>正社員</p>
-        </li>
-        <li>
-          <div>
-            <i class="material-icons">description</i>
-            <span>求人詳細</span>
-          </div>
-          <p>
-            みんなに優しい職場です。一緒に最高のウェルマーケしてくれる肩を募集中！一緒に最高のウェルマーケしてくれるかたを募集中！一緒に最高のウェルマーケしてくれる肩を募集中！一緒に最高のウェルマーケしてくれる肩を募集中！
-          </p>
-        </li>
-      </ul>
-      <span class="job-detail-updated">更新日：2019/04/26</span>
-    </section>
-
-    <form action="">
-      <h2>応募フォーム</h2>
-      <dl>
-        <dt><label for="name">氏名</label></dt>
-        <dd><input type="text" id="name" placeholder="医療 太郎"></dd>
-        <dt><label for="mail">メール</label></dt>
-        <dd><input type="email" id="mail" placeholder="example@medicaljob.com"></dd>
-        <dt><label for="tel">電話番号</label></dt>
-        <dd><input type="tel" id="tel" placeholder="000-1234-5678"></dd>
-        <dt><label for="birth">生年月日</label></dt>
-        <dd>
-          <!--TODO(nanako.kono) 矢印選択時に選択肢がでないので、変えないといけない-->
-          <div class="select-wrap">
-            <select name="birth" id="birth">
-              <optgroup label="生年月日を選択してください">
-                <option value="" hidden disabled selected>生年月日を選択してください</option>
-                <option value="">1994/03/09</option>
-              </optgroup>
-            </select>
-            <label for="birth">
-              <i class="material-icons">arrow_drop_down</i>
-            </label>
-          </div>
-        </dd>
-        <dt class="job-detail-form-license">資格</dt>
-        <dd>
-          <input type="checkbox" id="license_01" name="license[]" value="医師">
-          <label for="license_01" class="checkbox">医師</label>
-
-          <input type="checkbox" id="license_02" name="license[]" value="看護師">
-          <label for="license_02" class="checkbox">看護師</label>
-
-          <input type="checkbox" id="license_03" name="license[]" value="准看護師">
-          <label for="license_03" class="checkbox">准看護師</label>
-
-          <input type="checkbox" id="license_04" name="license[]" value="薬剤師">
-          <label for="license_04" class="checkbox">薬剤師</label>
-
-          <input type="checkbox" id="license_05" name="license[]" value="普通自動車免許">
-          <label for="license_05" class="checkbox">普通自動車免許</label>
-
-          <input type="checkbox" id="license_06" name="license[]" value="その他">
-          <label for="license_06" class="checkbox">その他</label>
-        </dd>
-        <dt class="job-detail-form-starting">勤務開始可能</dt>
-        <dd>
-          <input type="radio" name="starting" value="within_one_month" id="starting_01" checked>
-          <label for="starting_01" class="radio">一ヶ月以内</label>
-
-          <input type="radio" name="starting" value="within_three_months" id="starting_02">
-          <label for="starting_02" class="radio">三ヶ月以内</label>
-
-          <input type="radio" name="starting" value="within_six_months" id="starting_03">
-          <label for="starting_03" class="radio">六ヶ月以内</label>
-
-          <input type="radio" name="starting" value="anytime" id="starting_04">
-          <label for="starting_04" class="radio">条件が良ければいつでも</label>
-
-          <input type="radio" name="starting" value="undecided" id="starting_05">
-          <label for="starting_05" class="radio">未定</label>
-        </dd>
-        <dt><label for="purpose">応募動機</label></dt>
-        <dd>
-          <div class="select-wrap job-detail-form-purpose">
-            <select name="purpose" id="purpose">
-              <optgroup label="応募動機を選択してください">
-                <option value="" hidden disabled selected>応募動機を選択してください</option>
-                <option value="detail">求人の詳細が知りたい</option>
-                <option value="own_condition">求人に興味があり、自分の状況に沿った条件を知りたい</option>
-                <option value="annalogy">求人に興味があり、似た条件の求人を知りたい</option>
-                <option value="nagotiation">求人に興味があり、条件の変更ができるか交渉してほしい</option>
-                <option value="etc">求人に関するその他問い合わせ</option>
-              </optgroup>
-            </select>
-            <label for="birth">
-              <i class="material-icons">arrow_drop_down</i>
-            </label>
-          </div>
-        </dd>
-      </dl>
-      <div class="job-detail-form-button-box">
-        <p class="job-detail-form-terms-of-service"><a href="">利用規約<i class="material-icons">open_in_new</i></a>に同意して</p>
-        <a href="" class="button-primary-large">応募</a>
-      </div>
-    </form>
   </main>
 </body>
 </html>
